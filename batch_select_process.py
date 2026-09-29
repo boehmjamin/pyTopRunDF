@@ -1,5 +1,6 @@
 import os
 import subprocess
+import sys
 from pathlib import Path
 
 # Define the base directory containing scenario folders
@@ -35,7 +36,7 @@ def process_scenario(scenario_dir):
             # Call the simulation script with the file paths
             subprocess.run(
                 [
-                    "python",
+                    sys.executable,
                     "TopRunDF.py",  # Replace with the name of your simulation script
                     "--input", str(input_file),
                     "--dem", str(dem_file),
